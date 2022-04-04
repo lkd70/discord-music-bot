@@ -1,8 +1,11 @@
+import dotenv from "dotenv";
 import "reflect-metadata";
 import type { Interaction, Message } from "discord.js";
 import { Intents } from "discord.js";
 import { Client } from "discordx";
 import { dirname, importx } from "@discordx/importer";
+
+dotenv.config();
 
 const client = new Client({
   simpleCommand: { prefix: "!" },

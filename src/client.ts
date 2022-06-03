@@ -19,7 +19,8 @@ const client = new Client({
 });
 
 client.once("ready", async () => {
-  console.log("Logged in as", client,user);
+  console.log("Logged in as", client.user?.username, client.user?.discriminator);
+  console.log('Invite command: https://discord.com/api/oauth2/authorize?client_id=960597512895467641&permissions=8&scope=bot%20applications.commands');
   await client.initApplicationCommands();
   await client.initApplicationPermissions();
 

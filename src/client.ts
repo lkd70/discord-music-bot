@@ -19,10 +19,8 @@ const client = new Client({
 });
 
 client.once("ready", async () => {
-  await client.initApplicationCommands({
-    guild: { log: true },
-    global: { log: true },
-  });
+  console.log("Logged in as", client,user);
+  await client.initApplicationCommands();
   await client.initApplicationPermissions();
 
   console.log("Bot started");

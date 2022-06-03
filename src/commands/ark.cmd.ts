@@ -512,9 +512,15 @@ const forcefeild_cost = (sec: number, r: number) => Math.abs(sec / 3600) * r;
 
 @Discord()
 export class Forges {
-  @Slash("forges")
-  async forges() {
-
+  @Slash()
+  forges(interaction: CommandInteraction): void {
+    interaction.channel?.sendTyping();
+    interaction.reply("Thanks, an alert will be triggered in ~4 hours");
+    const now = new Date();
+    const fourHours = 14_400_000;
+    const eightMinutes = 480_000;
+    const timeThen = new Date(now.getTime() + fourHours + eightMinutes);
+    interaction.channel?.send(`<@${interaction.member?.user.id}> has filled the forges!. I'll notify at <t:${timeThen}:t> when it's time to cycle the forges.`);
   }
 }
 

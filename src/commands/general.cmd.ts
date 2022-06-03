@@ -17,7 +17,7 @@ export abstract class SlashExample {
     '`/music mix` - mixes current queue\n';
 
     const hlna_commands =
-    `/hlna <category <item> <count> - Queries a HLNA shop calculator for the specified item`
+    '`/hlna <category <item> <count>` - Queries a HLNA shop calculator for the specified item';
 
     const embed = new MessageEmbed()
     .setTitle("Help")

@@ -520,7 +520,7 @@ export class Forges {
     const time = ((now.getTime() + diff - 3600000) / 1000).toFixed(0);
     interaction.channel?.send(`<@${interaction.member?.user.id}> has filled the forges!. I'll notify at <t:${time}:t> in <t:${time}:R> when it's time to go again.`);
     setTimeout(() => {
-      interaction.channel?.send('It\'s roughly time to cycle the forges!');
+      interaction.channel?.send('@everyone It\'s roughly time to cycle the forges!');
     }, diff);
   }
 }

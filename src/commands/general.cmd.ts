@@ -7,23 +7,19 @@ export abstract class SlashExample {
   async pages(interaction: CommandInteraction): Promise<void> {
 
     const music_commands = 
-    '`/music play <song/artist> - Plays a song\n' +
-    '`/music leave` - Leaves the voice channel\n' +
-    '`/music pause` - Pauses the music\n' +
-    '`/music resume` - Resumes the music\n' +
-    '`/music seek` - Seeks to a specific time\n' +
-    '`/music skip` - Skips the current song\n' +
-    '`/music playlist` - Shows the current playlist\n' +
-    '`/music mix` - mixes current queue\n';
+    '`/play <song/artist> - Plays a song\n';
 
     const hlna_commands =
     '`/hlna <category <item> <count>` - Queries a HLNA shop calculator for the specified item';
 
+    const ark_commands = '`/forges` - Marks forges as filled and will @ everyone when they need to be filled again\n';
+  
     const embed = new MessageEmbed()
     .setTitle("Help")
     .addField("General Commands", "`help` - Shows this help message")
     .addField("Music Commands", music_commands)
-    .addField("HLNA Commands", hlna_commands);
+    .addField("HLNA Commands", hlna_commands)
+    .addField("Ark utility commands", ark_commands)
 
     interaction.reply({ embeds: [ embed ]});
   }
